@@ -140,23 +140,6 @@ namespace Vulkan
 			}
 		}
 
-		public SurfaceKhr CreateIOSSurfaceMVK (IOSSurfaceCreateInfoMvk pCreateInfo, AllocationCallbacks pAllocator = null)
-		{
-			Result result;
-			SurfaceKhr pSurface;
-			unsafe {
-				pSurface = new SurfaceKhr ();
-
-				fixed (UInt64* ptrpSurface = &pSurface.m) {
-					result = Interop.NativeMethods.vkCreateIOSSurfaceMVK (this.m, pCreateInfo != null ? pCreateInfo.m : (Interop.IOSSurfaceCreateInfoMvk*)default(IntPtr), pAllocator != null ? pAllocator.m : null, ptrpSurface);
-				}
-				if (result != Result.Success)
-					throw new ResultException (result);
-
-				return pSurface;
-			}
-		}
-
 		public SurfaceKhr CreateMacOSSurfaceMVK (MacOSSurfaceCreateInfoMvk pCreateInfo, AllocationCallbacks pAllocator = null)
 		{
 			Result result;

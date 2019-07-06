@@ -684,9 +684,6 @@ namespace Vulkan.Interop
 		internal static unsafe extern Result vkGetPastPresentationTimingGOOGLE (IntPtr device, UInt64 swapchain, UInt32* pPresentationTimingCount, PastPresentationTimingGoogle* pPresentationTimings);
 
 		[DllImport (VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
-		internal static unsafe extern Result vkCreateIOSSurfaceMVK (IntPtr instance, IOSSurfaceCreateInfoMvk* pCreateInfo, AllocationCallbacks* pAllocator, UInt64* pSurface);
-
-		[DllImport (VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
 		internal static unsafe extern Result vkCreateMacOSSurfaceMVK (IntPtr instance, MacOSSurfaceCreateInfoMvk* pCreateInfo, AllocationCallbacks* pAllocator, UInt64* pSurface);
 
 		[DllImport (VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
