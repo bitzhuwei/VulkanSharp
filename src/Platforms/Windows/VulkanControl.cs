@@ -57,11 +57,11 @@ namespace Vulkan.Windows {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
 
-            Surface = Instance.CreateWin32SurfaceKHR(
-                new Win32SurfaceCreateInfoKhr {
-                    Hwnd = Handle,
-                    Hinstance = Process.GetCurrentProcess().Handle
-                });
+            var info = new Win32SurfaceCreateInfoKhr {
+                Hwnd = Handle,
+                Hinstance = Process.GetCurrentProcess().Handle
+            };
+            Surface = Instance.CreateWin32SurfaceKHR(info);
         }
     }
 }
